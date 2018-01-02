@@ -19,6 +19,8 @@ The goals / steps of this project are the following:
 [hog]: ./output_images/hog.png
 [pipeline]: ./output_images/pipeline.png
 [result]: ./output_images/result.png
+[car]: ./output_images/car.png
+[notcar]: ./output_images/notcar.png
 [h]: ./output_images/h.png
 [l]: ./output_images/l.png
 [s]: ./output_images/s.png
@@ -53,7 +55,8 @@ The code for this step is contained in the part 1 of the IPython notebook.
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![alt text][image1]
+![alt text][car]
+![alt text][notcar]
 
 I then explored different color spaces for the hog algorithm.  
 
