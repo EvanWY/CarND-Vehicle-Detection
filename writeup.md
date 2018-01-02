@@ -134,10 +134,8 @@ Here's a [link to heatmap video](./heatmap.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The most difficult problem I faced in this project is to handle false positive. A higher threshold will result in bad detection on vehicle, but a lower threshold will result in false positive.
 
-The most difficutl problem I faced in this project is to handle false positive. A higher threshold will result in bad detection on vehicle, but a lower threshold will result in false positive.
-
-To solved this problem, I maintain a heatmap across different frames. I took the heatmap from current frame, substracted a fixed value from it, so that the system will remember where is the vehicle on last frame. Then I applied a `cv2.GaussianBlur()` to the image, because the posibility of the new position is not exactlly at the old position, it could move a little bit from the old position, which can be represent by gaussian blur.
+To solved this problem, I maintain a heatmap across different frames. I took the heatmap from current frame, substracted a fixed value from it, and passed it to next frame, so that the system will remember where is the vehicle on last frame. Then I applied a `cv2.GaussianBlur()` to the image, because the new position of the car will likely to have a small offset from the old position, which can be represented by gaussian blur.
 
 My pipeline will likely fail when there are some huge vehicle on the road such as truck or train. To make it more robust, I'll need to train the classifier on more complex dataset and fine tune the system on different videos.
