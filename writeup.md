@@ -15,6 +15,13 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
+[experiment]: ./output_images/experiment.png
+[hog]: ./output_images/hog.png
+[pipeline]: ./output_images/pipeline.png
+[result]: ./output_images/result.png
+[h]: ./output_images/h.png
+[l]: ./output_images/l.png
+[s]: ./output_images/s.png
 [image1]: ./examples/car_not_car.png
 [image2]: ./examples/HOG_example.jpg
 [image3]: ./examples/sliding_windows.jpg
@@ -38,18 +45,28 @@ You're reading it!
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the part 1 of the IPython notebook.
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
 ![alt text][image1]
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+I then explored different color spaces for the hog algorithm.  
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Here are the HOG result on all three of HLS color channel.
 
+H channel
+![alt text][h]
 
-![alt text][image2]
+L channel
+![alt text][l]
+
+S channel
+![alt text][s]
+
+Here is an example using the grayscale color and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+
+![alt text][hog]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
